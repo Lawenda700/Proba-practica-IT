@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollitehnica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer  src="script.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar">
+    <ul>
+        
+    <li><img src="Vector.jpg" ></li>
+    <li><button id="registerBtn" onclick="openPopup('registerPopup')">Register</button></li>
+    <li><button id="loginBtn" onclick="openPopup('loginPopup')">Login</button></li>
+    <li> <button id="logoutBtn" style="display: none;" onclick="logout()">Logout</button></li>
+
+    </ul>
+    <div id="loginPopup" class="popup">
+        <form onsubmit="login(event)">
+            <h2>Login</h2>
+            <label for="loginEmail">Email:</label>
+            <input type="text" id="loginEmail" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="registerPopup" class="popup">
+        <form onsubmit="register(event)">
+            <h2>Register</h2>
+            <label for="registerEmail">Email:</label>
+            <input type="text" id="registerEmail" required>
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" required>
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <div id="poll-section" style="display: none;">
+        <h2>Create a Poll</h2>
+        <form onsubmit="createPoll(event)">
+            <label for="poll-name">Title:</label>
+            <input type="text" id="poll-name" required>
+            <label for="poll-question">Question:</label>
+            <input type="text" id="poll-question" required>
+
+            <label for="poll-options">Options (comma-separated):</label>
+            <input type="text" id="poll-options" required>
+
+            <button type="submit">Create Poll</button>
+        </form>
+
+        <h2>Available Polls</h2>
+        <div id="polls"></div>
+    </div>
+    </nav>
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li>
+                    <a href="https://lsacbucuresti.ro/">LSAC Bucuresti</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </footer>
+  
+</body>
+</html>
