@@ -12,7 +12,7 @@
     <nav class="navbar">
     <ul>
         
-    <li><img src="Vector.jpg" ></li>
+    <li><img src="Vector.jpg" id="logo"></li>
     <li><button id="registerBtn" onclick="openPopup('registerPopup')">Register</button></li>
     <li><button id="loginBtn" onclick="openPopup('loginPopup')">Login</button></li>
     <li> <button id="logoutBtn" style="display: none;" onclick="logout()">Logout</button></li>
@@ -55,7 +55,11 @@
         </form>
 
         <h2>Available Polls</h2>
-        <div id="polls"></div>
+        <div id="polls">
+            <ol id="polluri_active">
+
+            </ol>
+        </div>
     </div>
     </nav>
     <footer>

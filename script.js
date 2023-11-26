@@ -1,8 +1,35 @@
-function createPoll(event) {
-    event.preventDefault();
-    alert('Poll created!');
-}
 
+
+class PollDetails{
+    poll_name="default";
+    poll_title="default";
+    poll_options="default";
+    constructor(poll_name,poll_title,poll_options){
+        this.poll_name=poll_name;
+        this.poll_title=poll_title;
+        this.poll_options=poll_options;
+    }
+     ToString(){
+      return   this.poll_name+" "+this.poll_title+" "+this.poll_options;
+
+    }
+   
+}
+lista_polluri=[]
+
+function createPoll(event) {
+    if(currentUser){ 
+     event.preventDefault();
+     let  x=document.getElementById('poll-name').value;
+     let  y=document.getElementById('poll-question').value;
+     let  z=document.getElementById('poll-options').value;
+     let obiect=new PollDetails(x,y,z)
+     lista_polluri.push(obiect)
+     document.getElementById("polluri_active").innerHTML+="<li>"+obiect.ToString()+"</li>";
+     alert('Poll created!');
+ 
+    }
+ }
 let currentUser = null;
 
 function updateNavbar() {
@@ -51,5 +78,6 @@ function register(event) {
 }
 function logout() {
     currentUser = null;
+    document.getElementById('poll-section').style.display = 'none';
     updateNavbar();
 }
